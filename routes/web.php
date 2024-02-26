@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/productos', 'ProductoController@index')->name('productos.index');
+Route::get('/productos/create', 'ProductoController@create')->name('productos.create');
+Route::get('/productos/{producto}/edit', 'ProductoController@edit')->name('productos.edit');
